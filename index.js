@@ -29,9 +29,9 @@ server.post("/pessoas/", (req, res)=>{
 // Atualizar pessoas
 server.put("/pessoas/:index", (req, res)=>{
     const { index } = req.params
-    const { nome } = req.body
+    const { name } = req.body
 
-    pessoas[index] = nome
+    pessoas[index] = `${name}`
     return res.json(pessoas)
 })
 
@@ -39,7 +39,7 @@ server.delete("/pessoas/:index", (req,res)=>{
     const { index } = req.params
 
     pessoas.splice(index, 1)
-    return res.json({ message: "O curso foi deletado" })
+    return res.json({ message: "A pessoa foi deletada" })
 })
 
 server.listen(3000)
